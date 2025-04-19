@@ -20,3 +20,32 @@ body > .container-fluid > .row {
 .left-column {
   background-color: #EDC7B7; /* Re-apply direct background */
 }
+
+/* Style for profile card overlap */
+.profile-card {
+  position: relative; /* Needed for z-index */
+  transform: translateX(50%);
+  z-index: 10; /* Ensure card is above other column content */
+  background-color: #f1d7cc; /* Lighter shade of left column bg */
+  /* Consider adding a fixed width if needed, e.g., width: 300px; max-width: 90%; */
+  padding-top: 2rem;    /* Add padding above content */
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Style for social icons section at bottom */
+.profile-card .social-icons {
+  background-color: #FFFFFF; /* White background */
+  padding: 1rem; /* Padding around icons */
+  /* The following ensures it spans width if card padding affects it */
+  margin-left: -2rem; /* Counteract card's left padding */
+  margin-right: -2rem; /* Counteract card's right padding */
+}
+
+/* Constrain profile image size */
+.profile-card .card-img-top {
+  width: 200px;  /* Match placeholder size */
+  height: 200px; /* Match placeholder size */
+  object-fit: cover; /* Scale image to cover, crop if needed */
+  object-position: center; /* Center the image within the frame */
+}

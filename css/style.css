@@ -1,10 +1,22 @@
-
-
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Make main content area fill space between header and footer */
+body > .container-fluid {
+  flex-grow: 1;
+  display: flex; /* Needed for child row height: 100% */
+}
 
+/* Make the row fill the height of the container-fluid */
+/* Columns inside will stretch by default */
+body > .container-fluid > .row {
+  height: 100%;
+  width: 100%; /* Ensure row takes full width */
+}
 
+.left-column {
+  background-color: #EDC7B7; /* Re-apply direct background */
+}

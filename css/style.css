@@ -4,6 +4,28 @@ body {
   min-height: 100vh;
 }
 
+/* Apply background color only to non-index pages */
+.page-background {
+  background-color: #EDC7B7;
+}
+
+/* Style page headers on non-index pages for positioning */
+body.page-background > header {
+  position: relative;
+  z-index: 5; /* Ensure header is above gradient if needed */
+}
+
+/* Add gradient line below page header */
+body.page-background > header::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; /* Position slightly below the header */
+  left: 0;
+  right: 0;
+  height: 2px; /* Adjust thickness as needed */
+  background: linear-gradient(to right, transparent, #D4B2A1, transparent); /* Gradient using darker theme color */
+}
+
 /* Make main content area fill space between header and footer */
 body > .container-fluid {
   flex-grow: 1;
